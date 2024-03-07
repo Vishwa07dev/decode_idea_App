@@ -1,7 +1,7 @@
 /**
  * Write the logic to create the controllers for the idea reesoures
  */
-
+const ideas = require("../models/ideas.model")
 
 /**
  * Create the controller for fetching all the ideas
@@ -10,3 +10,12 @@
  * 
  * Return list of all the ideas
  */
+
+exports.getAllIdeas = (req,res)=>{
+
+    // First read all the ideas from the idea model file
+
+    //return all those ideas
+    res.status(200).send(ideas)
+
+}
