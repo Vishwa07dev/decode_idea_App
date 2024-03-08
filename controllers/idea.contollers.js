@@ -60,3 +60,29 @@ exports.createIdea = (req, res)=>{
     // Return the response
     res.status(201).send(idea_object)
 }
+
+/**
+ * Controller for updating the idea
+ */
+exports.updateIdea = (req, res)=>{
+  
+    //Read the idea id
+    idea_id = req.params.id
+
+    //Check if that idea id is present
+    if(ideas[idea_id]){
+        idea_obj = req.body
+        ideas[idea_id] = idea_obj
+        res.status(200).send(idea_obj)
+
+    }else{
+        return res.status(404).send({
+            message : "Idea id you wanted to update doesn't exist!"
+        })
+    }
+
+    // Read the new idea body and replace it
+
+    // Return the updated idea
+
+}
